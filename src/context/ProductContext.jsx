@@ -12,7 +12,7 @@ export function ProductProvider({ children }) {
     const fetchProducts = async () => {
       try {
         // Making a request to json server 
-        const res = await fetch('/api/products')
+        const res = await fetch('https://json-server-vercel-seven-sepia.vercel.app/products')
         if(!res.ok) throw new Error ('Failed to fetch products')
           const data = await res.json()
         // console.log(data)
