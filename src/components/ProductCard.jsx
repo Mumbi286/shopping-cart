@@ -3,9 +3,12 @@ import { useCart } from "../context/CartContext";
 const ProductCard = ({product}) => {
     const { addToCart } = useCart()
 
-    return ( 
+    // BASE_URL may or may not end with "/", so join and collapse duplicate slashes
+    const imageSrc = `${import.meta.env.BASE_URL}/${product.image}`.replace(/\/{2,}/g, '/')
+
+    return (
         <div className="bg-white rounded-lg shadow p-4 flex flex-col" >
-            <img src={product.image} alt={product.name} />
+            <img src={imageSrc} alt={product.name} />
             <h2 className="text-xl font-semibold">{product.name}</h2>
             <p className="text-gray-500 text-sm mb-2">{product.description}</p>
             <p className="font-bold text-lg">${product.price.toFixed(2)}</p>

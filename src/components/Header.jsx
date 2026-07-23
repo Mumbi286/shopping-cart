@@ -11,7 +11,7 @@ const [showDropdown, setShowDropdown] = useState (false)
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
     return ( 
         <header className="'bg-white shadow-md p-4 flex justify-between items-center ">
-            <h1 className="text-2xl font-bold text-blue-600">ShopMate</h1>
+            <h1 className="text-2xl font-bold text-blue-600">TuShop</h1>
 
             <div className="relative">
                 <button className="cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
